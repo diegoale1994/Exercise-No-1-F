@@ -1,0 +1,25 @@
+<router-outlet></router-outlet>
+<button class="btn btn-primary" style="float:right" [routerLink]="['/persona/nuevo']">Crear</button>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of personas">
+            <th scope="row">{{item.idPersona}}</th>
+            <td>{{item.nombres}}</td>
+            <td>{{item.apellidos}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/persona/edicion', item.idPersona]">Editar</button> &nbsp;
+                <button class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

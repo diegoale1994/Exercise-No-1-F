@@ -1,0 +1,27 @@
+<app-producto-edicion [producto]="productoSeleccionado" *ngIf="productoSeleccionado"></app-producto-edicion>
+<button class="btn btn-primary" style="float:right" (click)="abrirModalNuevoProducto()">Crear</button>
+<br>
+<br>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of productos">
+            <th scope="row">{{item.idProducto}}</th>
+            <td>{{item.nombre}}</td>
+            <td>{{item.marca}}</td>
+            <td>{{item.precio}}</td>
+            <td>
+                <button class="btn btn-warning" (click)="abrirModal(item)">Editar</button> &nbsp;
+                <button class="btn btn-danger" (click)="eliminar(item)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+<form [formGroup]="form" #frmPersona="ngForm" (ngSubmit)="operar()">
+    <div class="form-group" [hidden]="true">
+        <input type="number" formControlName="id">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Nombres</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="nombres" placeholder="Ingresa tus nombres">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Apellidos</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="apellidos" placeholder="Ingresa tus apellidos">
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="frmPersona.invalid">aceptar</button>&nbsp;
+    <button type="button" class="btn btn-primary" [routerLink]="['/persona']">cancelar</button>
+</form>

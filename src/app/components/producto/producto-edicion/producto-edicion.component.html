@@ -1,0 +1,37 @@
+<div class="modal abrir-modal animacion fadeIn" tabindex="-1" role="dialog" *ngIf="modalProductoService.modal" style="display:block">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cerrarModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+
+                <form [formGroup]="form" #frmProducto="ngForm" (ngSubmit)="operar()">
+                    <div class="form-group" [hidden]="true">
+                        <input type="number" formControlName="id">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="nombre" placeholder="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Marca</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="marca" placeholder="marca">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Precio</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" formControlName="precio" placeholder="precio">
+                    </div>
+                    <button type="submit" class="btn btn-success" [disabled]="frmProducto.invalid">aceptar</button>&nbsp;
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cerrarModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
